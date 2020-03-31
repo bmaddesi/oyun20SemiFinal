@@ -1,0 +1,80 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) { // for question 6
+	    HashMap<Integer, Integer> values = new HashMap<Integer, Integer>();
+	    values.put(0,0);
+	    values.put(1,3);
+	    values.put(2,3);
+	    values.put(3,2);
+	    values.put(4,4);
+	    values.put(5,3);
+	    values.put(6,4);
+	    values.put(7,4);
+	    values.put(8,5);
+	    values.put(9,5);
+	    
+	    values.put(10,2);
+	    values.put(20,5);
+	    values.put(30,4);
+	    values.put(40,4);
+	    values.put(50,4);
+	    values.put(60,6);
+	    values.put(70,6);
+	    values.put(80,6);
+	    values.put(90,6);
+	    
+	    values.put(100,3);
+	    values.put(200,6);
+	    values.put(300,5);
+	    values.put(400,7);
+	    values.put(500,6);
+	    values.put(600,7);
+	    values.put(700,7);
+	    values.put(800,8);
+	    values.put(900,8);
+	    
+	    
+	    values.put(1000,3);
+	    values.put(2000,6);
+	    
+	    
+	    for(int i=999;i>=100;i--)
+	    {
+	        int ones = i % 10; 
+            int tens = (i/10) % 10;
+            int hund = (i/100) % 10;
+            int sum = 0;
+            sum = values.get(100*hund) + values.get(10*tens) + values.get(ones);
+            
+            int trip = 3*i;
+        
+            int onesT = trip % 10;
+            int tensT = (trip/10) % 10;
+            int hundT = (trip/100) % 10;
+            int th = (trip/1000) % 10;
+            int sumT = 0;
+            sumT = values.get(1000*th) + values.get(100*hundT) + values.get(10*tensT) + values.get(onesT);
+            
+            //System.out.println(sum);
+            //System.out.println(sumT);
+              
+            if(sum == sumT)
+            {
+                
+                System.out.println(i);
+            }
+            
+            
+	    }
+		
+	}
+}

@@ -1,0 +1,276 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    
+		ArrayList<ArrayList<String>> aList = new ArrayList<ArrayList<String>>();
+	   
+		
+		HashMap<Integer, String> ops = new HashMap<Integer, String>();
+		ops.put(0,"B");
+		ops.put(1,"+");
+		ops.put(2,"*");
+		ops.put(3,"/");
+		ops.put(4,"-");
+		
+		for(int a=0;a<5;a++)
+		{
+		    ArrayList<String> init = new ArrayList<String>(17);
+		    init.add("1");
+    		init.add(" ");
+    		init.add("2");
+    		init.add(" ");
+    		init.add("3");
+    		init.add(" ");
+    		init.add("4");
+    		init.add(" ");
+    		init.add("5");
+    		init.add(" ");
+    		init.add("6");
+    		init.add(" ");
+    		init.add("7");
+    		init.add(" ");
+    		init.add("8");
+    		init.add(" ");
+    		init.add("9");
+		    String tempA = ops.get(a);
+		    init.set(1, tempA);
+		    for(int b=0;b<5;b++)
+		    {
+		        String tempB = ops.get(b);
+		        init.set(3, tempB);
+		        for(int c=0;c<5;c++)
+		        {
+		            String tempC = ops.get(c);
+		            init.set(5, tempC);
+		            for(int d=0;d<5;d++)
+		            {
+		                String tempD = ops.get(d);
+		                init.set(7, tempD);
+		                for(int e=0;e<5;e++)
+		                {
+		                    String tempE = ops.get(e);
+		                    init.set(9, tempE);
+		                    for(int f=0;f<5;f++)
+		                    {
+		                        String tempF = ops.get(f);
+		                        init.set(11, tempF);
+		                        for(int g=0;g<5;g++)
+		                        {
+		                            String tempG = ops.get(g);
+		                            init.set(13, tempG);
+		                            for(int h=0;h<5;h++)
+		                            {
+		                                ArrayList<String> init1 = new ArrayList<String>(17);
+		                                init1.add("1");
+                                		init1.add(" ");
+                                		init1.add("2");
+                                		init1.add(" ");
+                                		init1.add("3");
+                                		init1.add(" ");
+                                		init1.add("4");
+                                		init1.add(" ");
+                                		init1.add("5");
+                                		init1.add(" ");
+                                		init1.add("6");
+                                		init1.add(" ");
+                                		init1.add("7");
+                                		init1.add(" ");
+                                		init1.add("8");
+                                		init1.add(" ");
+                                		init1.add("9");
+                                		Collections.copy(init1,init);
+		                                String tempH = ops.get(h);
+		                                init1.set(15, tempH);
+		                                //System.out.println(init1);
+		                                aList.add(init1);
+		                                //System.out.println(aList);
+		                                //aList.set(count, init);
+		                                //count++;
+		                                
+		                            }
+		                        }
+		                    }
+		                }
+		            }
+		        }
+		    }
+		}
+		
+	    // CALCULATIONS
+	    
+	    for(int i=131556;i<131557;i++) // whitespaces
+	    {
+	        ArrayList<String> temp = aList.get(i);
+	        System.out.println(temp);
+	        
+	        for(int k=0;k<5;k++)
+	        {
+	            for(int j=0;j<temp.size();j++)
+    	        {
+    	            
+                    if(temp.get(j).equals("B"))
+                    {
+    	                String after = temp.get(j+1);
+    	                temp.set(j-1, temp.get(j-1) + after);
+    	                temp.remove(j);
+    	                temp.remove(j);
+    	                
+    	                //System.out.println(temp);
+                    }
+	            
+	            }
+	        }
+	        
+	        //System.out.println(temp);
+	        
+	    }
+	    
+	    for(int i=0;i<aList.size();i++) // multiplication and division
+	    {
+	        ArrayList<String> temp = aList.get(i);
+	        //System.out.println(temp);
+	        
+	        for(int k=0;k<5;k++)
+	        {
+	            for(int j=0;j<temp.size();j++)
+    	        {
+    	            if(temp.get(j).equals("*") || temp.get(j).equals("/"))
+    	            {
+    	                if(temp.get(j).equals("*"))
+                        {
+                        
+                            String after = temp.get(j+1);
+        	                String before = temp.get(j-1);
+        	                double afterInt = Double.parseDouble(after);
+        	                double beforeInt = Double.parseDouble(before);
+        	                String mult = Double.toString(afterInt * beforeInt);
+        	                temp.set(j-1, mult);
+        	                temp.remove(j);
+        	                temp.remove(j);
+        	                
+                       
+                        }
+                    
+                        else if(temp.get(j).equals("/"))
+                        {
+                            String after = temp.get(j+1);
+        	                String before = temp.get(j-1);
+        	                double afterInt = Double.parseDouble(after);
+        	                double beforeInt = Double.parseDouble(before);
+        	                double div = (double)beforeInt / afterInt;
+        	                
+    	                    String div1 = Double.toString(div);
+    	                    temp.set(j-1,div1);
+        	                temp.remove(j);
+        	                temp.remove(j);
+        	                
+        	               
+                        }
+    	            }
+    	            
+                    
+    	            
+    	        }
+	        }
+	        
+	        
+	    }
+	    
+	    
+	   
+	    
+	    
+	    
+	    
+	    for(int i=0;i<aList.size();i++) // addition
+	    {
+	       
+	        ArrayList<String> temp = aList.get(i);
+	        //System.out.println(temp);
+	        
+	        for(int k=0;k<5;k++)
+	        {
+	            for(int j=0;j<temp.size();j++)
+    	        {
+    	            
+                    if(temp.get(j).equals("+"))
+                    {
+                    
+                        String after = temp.get(j+1);
+    	                String before = temp.get(j-1);
+    	                double afterInt = Double.parseDouble(after);
+    	                double beforeInt = Double.parseDouble(before);
+    	                String add = Double.toString(afterInt + beforeInt);
+    	                temp.set(j-1, add);
+    	                temp.remove(j);
+    	                temp.remove(j);
+        	                
+                        
+                        
+    	                
+    	                //System.out.println(temp);
+                    }
+    	            
+    	        }
+	        }
+	        
+	        
+	    }
+	    
+	    for(int i=0;i<aList.size();i++) // subtraction
+	    {
+	       
+	        ArrayList<String> temp = aList.get(i);
+	        //System.out.println(temp);
+	        
+	        for(int k=0;k<5;k++)
+	        {
+	            for(int j=0;j<temp.size();j++)
+    	        {
+    	            
+                    if(temp.get(j).equals("-"))
+                    {
+                        
+                        
+                        String after = temp.get(j+1);
+    	                String before = temp.get(j-1);
+    	                double afterInt = Double.parseDouble(after);
+    	                double beforeInt = Double.parseDouble(before);
+    	                double sub = beforeInt - afterInt;
+    	                
+	                    String sub1 = Double.toString(sub);
+	                    temp.set(j-1,sub1);
+    	                temp.remove(j);
+    	                temp.remove(j);
+        	                
+                        
+    	                
+    	                //System.out.println(temp);
+                    }
+    	            
+    	        }
+	        }
+	        
+	        
+	    }
+	    
+	    
+	    
+	    
+	    
+	
+	
+	}
+	
+	
+	
+	
+}
