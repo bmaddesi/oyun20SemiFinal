@@ -1,0 +1,12 @@
+In the following questions satisfy the equality by using the operations of addition, subtraction, multiplication and division.
+  - If no sign is placed into the box between two numbers, then those two numbers are brought together and they form
+  a new number.
+  - It is not obligatory to use all signs.
+  - The signs can be used more than once.
+  - Multiplication and division have priority over addition and subtraction.
+  
+As a result, type in the order of signs from left to right. If a blankspace is encountered, represent it with a "B".
+
+Example:
+
+  As a result, you would enter Bx/xB+Bx.
